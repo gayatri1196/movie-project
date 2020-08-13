@@ -1,0 +1,13 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="genre.opened = true" (closed)="genre.opened = false" 
+    *ngFor="let genre of genreList">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{genre.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-movie-list [genre] = "genre" [panelOpenState] = "genre.opened"></app-movie-list>
+  </mat-expansion-panel>
+</mat-accordion>

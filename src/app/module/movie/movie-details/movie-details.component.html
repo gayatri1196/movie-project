@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <!-- <div mat-card-avatar>
+      <img [src]=" IMAGE_BASE_URL+movieDetails?.backdrop_path">
+    </div> -->
+    <mat-card-title>{{movieDetails?.title}}</mat-card-title>
+    <mat-card-subtitle>
+      <span *ngFor="let language of movieDetails?.spoken_languages">{{language.name}} </span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img [src]="IMAGE_BASE_URL+movieDetails?.poster_path" alt="Image not available" width="300px" height="500px">
+  <mat-card-content>
+    <p>
+      {{movieDetails?.overview}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <p>Release Date:{{movieDetails?.release_date|date:'dd,M,yyy'}}</p>
+    <p>Popularity: {{movieDetails?.popularity}}</p>
+    <p>Revenue:{{movieDetails?.revenue}}</p>
+  </mat-card-actions>
+</mat-card>
